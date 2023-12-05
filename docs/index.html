@@ -42,6 +42,20 @@
         .panel {
             display: none;
         }
+        .panel-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .record-list {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .requests-section,
+        .permissions-section {
+            flex: 1;
+        }
     </style>
 </head>
 
@@ -65,7 +79,35 @@
 
         <section id="aluno" class="panel">
             <h2>Painel do Aluno</h2>
-            <p>Bem-vindo ao Painel do Aluno! Aqui você pode acessar seus registros acadêmicos e gerenciar solicitações de compartilhamento.</p>
+            <div class="panel-content">
+                <div class="record-list">
+                    <h3>Visualização de Registros</h3>
+                    <!-- Adicione a lista de registros acadêmicos aqui -->
+                    <ul>
+                        <li>Registro 1</li>
+                        <li>Registro 2</li>
+                        <li>Registro 3</li>
+                        <!-- Adicione mais registros conforme necessário -->
+                    </ul>
+                </div>
+
+                <div class="requests-section">
+                    <h3>Solicitações de Compartilhamento</h3>
+                    <!-- Adicione a seção de solicitações de compartilhamento aqui -->
+                    <ul>
+                        <li>Solicitação 1 - Pendente</li>
+                        <li>Solicitação 2 - Aprovada</li>
+                        <li>Solicitação 3 - Rejeitada</li>
+                        <!-- Adicione mais solicitações conforme necessário -->
+                    </ul>
+                </div>
+
+                <div class="permissions-section">
+                    <h3>Configurações de Permissões</h3>
+                    <!-- Adicione a seção de configurações de permissões aqui -->
+                    <p>Gerencie suas permissões de emissão de registros acadêmicos aqui.</p>
+                </div>
+            </div>
         </section>
 
         <section id="instituicao" class="panel">
