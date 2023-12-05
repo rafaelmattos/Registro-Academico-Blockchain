@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Compartilhamento Acadêmico</title>
     <style>
@@ -10,23 +10,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
         }
 
         header {
-            background-color: #4285f4;
-            padding: 10px;
+            background-color: #333;
+            color: white;
             text-align: center;
-            color: #fff;
+            padding: 20px;
         }
 
         main {
-            max-width: 800px;
-            margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         section {
@@ -34,20 +29,22 @@
         }
 
         nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #4285f4;
+            background-color: #eee;
             padding: 10px;
-            color: #fff;
         }
 
         nav a {
             text-decoration: none;
-            color: #fff;
-            font-weight: bold;
+            color: #333;
+            margin: 0 10px;
+        }
+
+        .panel {
+            display: none;
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Sistema de Compartilhamento Acadêmico</h1>
@@ -60,39 +57,43 @@
             <p>Bem-vindo ao Sistema de Compartilhamento Acadêmico! Este sistema utiliza tecnologia blockchain para garantir a segurança e autenticidade dos registros acadêmicos. Oferecemos uma maneira eficiente e transparente de compartilhar e verificar informações acadêmicas.</p>
         </section>
 
-        <section>
-            <h2>Opções de Navegação</h2>
-            <nav>
-                <a href="#painel-aluno">Painel do Aluno</a>
-                <a href="#painel-instituicao">Painel da Instituição</a>
-                <a href="#painel-verificador">Painel do Verificador</a>
-            </nav>
-        </section>
-        
-        <section id="painel-aluno">
+        <nav>
+            <a href="#" onclick="showPanel('aluno')">Painel do Aluno</a>
+            <a href="#" onclick="showPanel('instituicao')">Painel da Instituição</a>
+            <a href="#" onclick="showPanel('verificador')">Painel do Verificador</a>
+        </nav>
+
+        <section id="aluno" class="panel">
             <h2>Painel do Aluno</h2>
-            <p>Bem-vindo ao Painel do Aluno! Faça login para acessar seus registros acadêmicos e gerenciar solicitações de compartilhamento.</p>
-            <!-- Adicione formulário de login ou link para página de login do aluno -->
+            <p>Bem-vindo ao Painel do Aluno! Aqui você pode acessar seus registros acadêmicos e gerenciar solicitações de compartilhamento.</p>
         </section>
 
-        <section id="painel-instituicao">
+        <section id="instituicao" class="panel">
             <h2>Painel da Instituição</h2>
-            <p>Bem-vindo ao Painel da Instituição! Faça login para solicitar emissão de registros acadêmicos e gerenciar solicitações de compartilhamento recebidas.</p>
-            <!-- Adicione formulário de login ou link para página de login da instituição -->
+            <p>Bem-vindo ao Painel da Instituição! Aqui você pode solicitar emissão de registros acadêmicos e gerenciar solicitações de compartilhamento recebidas.</p>
         </section>
 
-        <section id="painel-verificador">
+        <section id="verificador" class="panel">
             <h2>Painel do Verificador</h2>
-            <p>Bem-vindo ao Painel do Verificador! Faça login para verificar a autenticidade dos registros acadêmicos.</p>
-            <!-- Adicione formulário de login ou link para página de login do verificador -->
+            <p>Bem-vindo ao Painel do Verificador! Aqui você pode verificar a autenticidade dos registros acadêmicos.</p>
         </section>
-
-
-
-
     </main>
 
-    <!-- Adicione as seções para os painéis do Aluno, Instituição e Verificador -->
+    <script>
+        function showPanel(panelId) {
+            // Oculta todos os painéis
+            var panels = document.querySelectorAll('.panel');
+            panels.forEach(function (panel) {
+                panel.style.display = 'none';
+            });
 
+            // Exibe o painel correspondente ao clicar no menu
+            var selectedPanel = document.getElementById(panelId);
+            if (selectedPanel) {
+                selectedPanel.style.display = 'block';
+            }
+        }
+    </script>
 </body>
+
 </html>
