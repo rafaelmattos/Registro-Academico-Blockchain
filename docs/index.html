@@ -71,6 +71,19 @@
         .permissions-section {
             flex: 1;
         }
+        .panel-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .record-list {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .verification-section {
+            flex: 1;
+        }
     </style>
 </head>
 
@@ -138,55 +151,109 @@
         </section>
 
         <section id="instituicao" class="panel">
-        <h2>Painel da Instituição</h2>
+            <h2>Painel da Instituição</h2>
 
-        <div class="panel-content">
-            <div class="record-list">
-                <h3>Registros Acadêmicos</h3>
-                <!-- Lista de registros acadêmicos associados à instituição -->
-                <ul>
-                    <li>
-                        <strong>Disciplina:</strong> Matemática
-                        <br>
-                        <strong>Aluno:</strong> João da Silva
-                    </li>
-                    <li>
-                        <strong>Disciplina:</strong> História
-                        <br>
-                        <strong>Aluno:</strong> Maria Oliveira
-                    </li>
-                    <li>
-                        <strong>Disciplina:</strong> Programação Avançada
-                        <br>
-                        <strong>Aluno:</strong> Carlos Souza
-                    </li>
-                    <!-- Adicione mais registros conforme necessário -->
-                </ul>
+            <div class="panel-content">
+                <div class="record-list">
+                    <h3>Registros Acadêmicos</h3>
+                    <!-- Lista de registros acadêmicos associados à instituição -->
+                    <ul>
+                        <li>
+                            <strong>Disciplina:</strong> Matemática
+                            <br>
+                            <strong>Aluno:</strong> João da Silva
+                        </li>
+                        <li>
+                            <strong>Disciplina:</strong> História
+                            <br>
+                            <strong>Aluno:</strong> Maria Oliveira
+                        </li>
+                        <li>
+                            <strong>Disciplina:</strong> Programação Avançada
+                            <br>
+                            <strong>Aluno:</strong> Carlos Souza
+                        </li>
+                        <!-- Adicione mais registros conforme necessário -->
+                    </ul>
+                </div>
+
+                <div class="requests-section">
+                    <h3>Solicitações de Compartilhamento</h3>
+                    <!-- Seção para rastrear solicitações de compartilhamento -->
+                    <ul>
+                        <li>Solicitação 1 - Pendente</li>
+                        <li>Solicitação 2 - Aprovada</li>
+                        <li>Solicitação 3 - Rejeitada</li>
+                        <!-- Adicione mais solicitações conforme necessário -->
+                    </ul>
+                </div>
+
+                <div class="permissions-section">
+                    <h3>Configurações de Permissões</h3>
+                    <!-- Área para gerenciar configurações de permissões -->
+                    <p>Gerencie as permissões de emissão de registros acadêmicos aqui.</p>
+                </div>
             </div>
-
-            <div class="requests-section">
-                <h3>Solicitações de Compartilhamento</h3>
-                <!-- Seção para rastrear solicitações de compartilhamento -->
-                <ul>
-                    <li>Solicitação 1 - Pendente</li>
-                    <li>Solicitação 2 - Aprovada</li>
-                    <li>Solicitação 3 - Rejeitada</li>
-                    <!-- Adicione mais solicitações conforme necessário -->
-                </ul>
-            </div>
-
-            <div class="permissions-section">
-                <h3>Configurações de Permissões</h3>
-                <!-- Área para gerenciar configurações de permissões -->
-                <p>Gerencie as permissões de emissão de registros acadêmicos aqui.</p>
-            </div>
-        </div>
-    </section>
-
+        </section>
         <section id="verificador" class="panel">
             <h2>Painel do Verificador</h2>
-            <p>Bem-vindo ao Painel do Verificador! Aqui você pode verificar a autenticidade dos registros acadêmicos.</p>
+
+            <div class="panel-content">
+                <div class="record-list">
+                    <h3>Registros Acadêmicos</h3>
+                    <!-- Lista de registros acadêmicos disponíveis para verificação -->
+                    <ul>
+                        <li>
+                            <strong>Disciplina:</strong> Matemática
+                            <br>
+                            <strong>Aluno:</strong> João da Silva
+                            <br>
+                            <strong>Matrícula:</strong> 123456
+                        </li>
+                        <li>
+                            <strong>Disciplina:</strong> História
+                            <br>
+                            <strong>Aluno:</strong> Maria Oliveira
+                            <br>
+                            <strong>Matrícula:</strong> 789012
+                        </li>
+                        <li>
+                            <strong>Disciplina:</strong> Programação Avançada
+                            <br>
+                            <strong>Aluno:</strong> Carlos Souza
+                            <br>
+                            <strong>Matrícula:</strong> 345678
+                        </li>
+                        <!-- Adicione mais registros conforme necessário -->
+                    </ul>
+                </div>
+
+                <div class="verification-section">
+                    <h3>Verificação de Registros</h3>
+                    <!-- Área para realizar verificações de registros -->
+                    <p>Insira o identificador único do registro abaixo para verificar sua autenticidade:</p>
+                    <input type="text" id="matriculaVerificacao" placeholder="Matrícula">
+                    <button onclick="realizarVerificacao()">Verificar</button>
+
+                    <!-- Local para exibir o resultado da verificação -->
+                    <p id="resultadoVerificacao"></p>
+                </div>
+            </div>
         </section>
+
+        <!-- O restante do HTML e o script JavaScript permanecem inalterados -->
+
+        <script>
+            function realizarVerificacao() {
+                // Lógica de verificação aqui
+                // Exemplo: Recuperar o identificador único inserido e verificar no contrato inteligente
+
+                // Exibindo o resultado da verificação (pode ser "Autêntico" ou "Não autêntico")
+                document.getElementById("resultadoVerificacao").innerText = "Autêntico";
+            }
+        </script>
+
+        
     </main>
 
     <script>
