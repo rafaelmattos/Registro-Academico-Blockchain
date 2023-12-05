@@ -153,28 +153,20 @@
         <section id="instituicao" class="panel">
             <h2>Painel da Instituição</h2>
 
-            <div class="panel-content">
-                <div class="record-list">
-                    <h3>Registros Acadêmicos</h3>
-                    <!-- Lista de registros acadêmicos associados à instituição -->
-                    <ul>
-                        <li>
-                            <strong>Disciplina:</strong> Matemática
-                            <br>
-                            <strong>Aluno:</strong> João da Silva
-                        </li>
-                        <li>
-                            <strong>Disciplina:</strong> História
-                            <br>
-                            <strong>Aluno:</strong> Maria Oliveira
-                        </li>
-                        <li>
-                            <strong>Disciplina:</strong> Programação Avançada
-                            <br>
-                            <strong>Aluno:</strong> Carlos Souza
-                        </li>
-                        <!-- Adicione mais registros conforme necessário -->
-                    </ul>
+            <!-- Seção de Emissão de Registros Acadêmicos -->
+                <div class="record-issuance">
+                    <h3>Emissão de Registros Acadêmicos</h3>
+                    <form id="emissaoForm">
+                        <label for="aluno">Aluno:</label>
+                        <input type="text" id="aluno" name="aluno" required>
+
+                        <label for="curso">Curso:</label>
+                        <input type="text" id="curso" name="curso" required>
+
+                        <!-- Adicione mais campos conforme necessário -->
+
+                        <button type="button" onclick="emitirRegistro()">Emitir Registro</button>
+                    </form>
                 </div>
 
                 <div class="requests-section">
@@ -242,7 +234,24 @@
         </section>
 
         <!-- O restante do HTML e o script JavaScript permanecem inalterados -->
+        <script>
+            // Função para emitir um registro acadêmico
+            function emitirRegistro() {
+                // Lógica para interagir com o contrato inteligente e emitir um registro
+                // Atualizar a lista de solicitações pendentes após a emissão, se necessário
+            }
 
+            // Lógica para recuperar e exibir as solicitações pendentes
+            function exibirSolicitacoesPendentes() {
+                // Lógica para recuperar as solicitações pendentes da blockchain
+                // Exibir as solicitações na lista #solicitacoesList
+            }
+
+            // Atualizar a lista de solicitações pendentes quando a página for carregada
+            document.addEventListener("DOMContentLoaded", function () {
+                exibirSolicitacoesPendentes();
+            });
+        </script>
         <script>
             function realizarVerificacao() {
                 // Lógica de verificação aqui
