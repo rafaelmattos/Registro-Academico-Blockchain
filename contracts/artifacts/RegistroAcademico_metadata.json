@@ -1,0 +1,198 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "matricula",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "nomeAluno",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "instituicao",
+						"type": "address"
+					}
+				],
+				"name": "RegistroEmitido",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "instituicao",
+						"type": "address"
+					}
+				],
+				"name": "concederPermissaoDeEmissao",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "instituicao",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "matricula",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "nomeAluno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "curso",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nota",
+						"type": "uint256"
+					}
+				],
+				"name": "emitirRegistroAcademico",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "permissoesDeEmissao",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "registros",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "instituicao",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "nomeAluno",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "matricula",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "curso",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nota",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "emitido",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "instituicao",
+						"type": "address"
+					}
+				],
+				"name": "revogarPermissaoDeEmissao",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/RegistroAcademico.sol": "RegistroAcademico"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/RegistroAcademico.sol": {
+			"keccak256": "0xd04e296667c141bf421c18e1427671d95656b84f0aa07f86544d9365602e8245",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://68e1b862ec71909c118b3999f9cce4b05df937a11034c36d836993ce819a1ea4",
+				"dweb:/ipfs/QmYwCaBkVym6gHoJ4yeY1DTwBESCkXe6dBngoJNn8T6ca7"
+			]
+		}
+	},
+	"version": 1
+}

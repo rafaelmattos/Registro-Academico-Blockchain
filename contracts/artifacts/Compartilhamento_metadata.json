@@ -1,0 +1,198 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "matricula",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "aluno",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "destinatario",
+						"type": "address"
+					}
+				],
+				"name": "CompartilhamentoAprovado",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "matricula",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "aluno",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "destinatario",
+						"type": "address"
+					}
+				],
+				"name": "SolicitacaoDeCompartilhamento",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "aprovarCompartilhamento",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "obterNumeroDeSolicitacoes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "solicitacaoAprovada",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "solicitacoesDeCompartilhamento",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "aluno",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "destinatario",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "matricula",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "informacoesCompartilhadas",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "aprovada",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "matricula",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "informacoesCompartilhadas",
+						"type": "string"
+					}
+				],
+				"name": "solicitarCompartilhamento",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Compartilhamento.sol": "Compartilhamento"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Compartilhamento.sol": {
+			"keccak256": "0x8513b0a38d8982a72a07873f6e6acaf78a3df024100fd2af0a480e10c9f16cfd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6601cdf916b5332dccab4acb43a12f6d064920d739525fc84e5f3ddf3d313227",
+				"dweb:/ipfs/QmRmstJDg45LHBhYa3PibNBnFF7EnWfqH4pfcrAAbRyKb5"
+			]
+		}
+	},
+	"version": 1
+}
