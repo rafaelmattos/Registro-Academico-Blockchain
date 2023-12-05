@@ -1,0 +1,147 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "instituicao",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "nomeAluno",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "matricula",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "curso",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "nota",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "emitido",
+						"type": "bool"
+					}
+				],
+				"name": "LogEstadoContrato",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "afterAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "beforeAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testeConcederPermissaoDeEmissao",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testeEmitirRegistroAcademico",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testeRevogarPermissaoDeEmissao",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testeVerificarRegistroAposEmissao",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tests/RegistroAcademico_test.sol": "RegistroAcademicoTest"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/RegistroAcademico.sol": {
+			"keccak256": "0xd04e296667c141bf421c18e1427671d95656b84f0aa07f86544d9365602e8245",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://68e1b862ec71909c118b3999f9cce4b05df937a11034c36d836993ce819a1ea4",
+				"dweb:/ipfs/QmYwCaBkVym6gHoJ4yeY1DTwBESCkXe6dBngoJNn8T6ca7"
+			]
+		},
+		"remix_tests.sol": {
+			"keccak256": "0xe2783cdc204cba8c72494119339f1d90f9022b15d6c718c668b7f097d8e29787",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bb6a22e64c7f16bcaab63b1c1a1b269d5be8a6d37bdd9dec1718477ab916b18e",
+				"dweb:/ipfs/QmdkW1tT5iadBvaHMCoskhDGZKnfdg8o1D9CcoQYtdJet7"
+			]
+		},
+		"tests/RegistroAcademico_test.sol": {
+			"keccak256": "0x415d08e3d9f20c4dedb6606c8c5da84e71ae98a8eaa73c1691b759182dcea6be",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e94e32aa2ea4d60c743d1b3ee27075f39ce382c1dba419f59ae197b4da796937",
+				"dweb:/ipfs/QmcC8CqMNmY3DoKGp7T66XkD1WtLHweqvbN2ZyVsCWkVNM"
+			]
+		}
+	},
+	"version": 1
+}
