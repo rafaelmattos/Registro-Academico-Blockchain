@@ -107,6 +107,8 @@
 
         <section id="aluno" class="panel">
             <h2>Painel do Aluno</h2>
+            <p>Bem-vindo ao Painel do Aluno! Aqui você pode acessar seus registros acadêmicos e gerenciar solicitações de compartilhamento.</p>
+            
                 <div class="panel-content">
                     <div class="record-list">
                     <h3>Visualização de Registros</h3>
@@ -152,6 +154,7 @@
 
         <section id="instituicao" class="panel">
             <h2>Painel da Instituição</h2>
+            
 
             <!-- Seção de Emissão de Registros Acadêmicos -->
                 <div class="record-issuance">
@@ -186,9 +189,149 @@
                     <p>Gerencie as permissões de emissão de registros acadêmicos aqui.</p>
                 </div>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js"></script>
+
+            <script>
+                // Use o provedor Web3, por exemplo, o MetaMask
+                const web3 = new Web3(Web3.givenProvider);
+
+                // Substitua pelo endereço do seu contrato
+                const contractAddress = "0x93f8dddd876c7dBE3323723500e83E202A7C96CC";
+                
+                // Substitua pelo ABI do seu contrato
+                const contractABI = [
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "instituicao",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "nomeAluno",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": true,
+                                "internalType": "uint256",
+                                "name": "matricula",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "curso",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "nota",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "bool",
+                                "name": "emitido",
+                                "type": "bool"
+                            }
+                        ],
+                        "name": "LogEstadoContrato",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [],
+                        "name": "afterAll",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [],
+                        "name": "beforeAll",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [],
+                        "name": "testeConcederPermissaoDeEmissao",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [],
+                        "name": "testeEmitirRegistroAcademico",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [],
+                        "name": "testeRevogarPermissaoDeEmissao",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [],
+                        "name": "testeVerificarRegistroAposEmissao",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }
+                ];
+
+                const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+                // Função para emitir um registro acadêmico
+                async function emitirRegistro() {
+                    const aluno = document.getElementById("aluno").value;
+                    const curso = document.getElementById("curso").value;
+
+                    // Use a função do contrato para emitir um registro
+                    await contract.methods.emitirRegistro(aluno, curso).send({ from: web3.currentProvider.selectedAddress });
+
+                    // Atualize a lista de solicitações pendentes
+                    exibirSolicitacoesPendentes();
+                }
+
+                // Lógica para recuperar e exibir as solicitações pendentes
+                async function exibirSolicitacoesPendentes() {
+                    const solicitacoesList = document.getElementById("solicitacoesList");
+
+                    // Limpe a lista existente
+                    solicitacoesList.innerHTML = "";
+
+                    // Use a função do contrato para recuperar as solicitações pendentes
+                    const solicitacoes = await contract.methods.getSolicitacoesPendentes().call();
+
+                    // Exibir as solicitações na lista
+                    solicitacoes.forEach(solicitacao => {
+                        const listItem = document.createElement("li");
+                        listItem.textContent = solicitacao;
+                        solicitacoesList.appendChild(listItem);
+                    });
+                }
+
+                // Atualizar automaticamente a lista de solicitações pendentes a cada intervalo (por exemplo, 30 segundos)
+                setInterval(exibirSolicitacoesPendentes, 30000);
+
+                // Atualizar a lista de solicitações pendentes quando a página for carregada
+                document.addEventListener("DOMContentLoaded", function () {
+                    exibirSolicitacoesPendentes();
+                });
+            </script>
         </section>
         <section id="verificador" class="panel">
             <h2>Painel do Verificador</h2>
+            <p>Bem-vindo ao Painel do Verificador! Aqui você pode verificar a autenticidade dos registros acadêmicos.</p>
+        
 
             <div class="panel-content">
                 <div class="record-list">
